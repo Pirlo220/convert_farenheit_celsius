@@ -47,5 +47,5 @@ fn validate_correct_measure(measure:&String) -> bool{
 }
 
 fn calculate_fahrenheit_2_celsius(m_value:f32) -> f32{
-    return ((m_value - 32) *5) /9;
+    return ((m_value - 32_f32) * 5_f32) / 9_f32;
 }
