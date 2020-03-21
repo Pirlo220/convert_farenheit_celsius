@@ -1,6 +1,7 @@
 use std::io;
 
-fn main() {    
+fn main() {
+    let mut in_type = String::new();
     loop {
         println!("Enter if the type of your measure (C: Celsius, F: fahrenheit):");
 
@@ -48,4 +49,8 @@ fn validate_correct_measure(measure:&String) -> bool{
 
 fn calculate_fahrenheit_2_celsius(m_value:f32) -> f32{
     return ((m_value - 32_f32) * 5_f32) / 9_f32;
+}
+
+fn calculate_celsius_2_fahrenheit(m_value:f32) -> f32{
+    return ((m_value * 9_f32) / 5_f32) + 32_f32;
 }
