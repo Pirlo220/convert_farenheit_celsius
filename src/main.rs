@@ -2,7 +2,7 @@ use std::io;
 
 fn main() {    
     loop {
-        println!("Enter if the type of your measure (C: Celsius, F: Farenheit):");
+        println!("Enter if the type of your measure (C: Celsius, F: fahrenheit):");
 
         let mut type_of_measure = String::new();
     
@@ -14,10 +14,10 @@ fn main() {
         };
         if validate_correct_measure(&chosed_type) {
             let m_type = if chosed_type == "C"{
-                "Celsius to Farenheit"                
+                "Celsius to fahrenheit"                
             }
             else {
-                "Farenheit to Celsius"
+                "fahrenheit to Celsius"
             } ;
             println!("You chose {}", m_type);            
             break;       
@@ -36,7 +36,7 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue
         };
-        let result:f32 = calculate_farenheit_2_celsius(chosed_value);
+        let result:f32 = calculate_fahrenheit_2_celsius(chosed_value);
         println!("Result: {}", result);
         break;
     }
@@ -46,6 +46,6 @@ fn validate_correct_measure(measure:&String) -> bool{
     measure.eq("C") || measure.eq("F")
 }
 
-fn calculate_farenheit_2_celsius(m_value:f32) -> f32{
+fn calculate_fahrenheit_2_celsius(m_value:f32) -> f32{
     return ((m_value - 32) *5) /9;
 }
