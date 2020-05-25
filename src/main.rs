@@ -1,7 +1,6 @@
 use std::io;
 
-fn main() {
-    let mut in_type = String::new();
+fn main() {   
     loop {
         println!("Enter if the type of your measure (C: Celsius, F: fahrenheit):");
 
@@ -23,7 +22,7 @@ fn main() {
             println!("You chose {}", m_type);            
             break;       
         }
-        else {
+        else {  
             println!("Please enter C or F");   
             continue;         
         }        
@@ -48,7 +47,9 @@ fn validate_correct_measure(measure:&String) -> bool{
 }
 
 fn calculate_fahrenheit_2_celsius(m_value:f32) -> f32{
-    return ((m_value - 32_f32) * 5_f32) / 9_f32;
+    // Without a return and no ";" it will return the last expression explicitly
+    //  If you add a semicolon to the end of an expression, you turn it into a statement, which will then not return a value.
+    ((m_value - 32_f32) * 5_f32) / 9_f32
 }
 
 fn calculate_celsius_2_fahrenheit(m_value:f32) -> f32{
